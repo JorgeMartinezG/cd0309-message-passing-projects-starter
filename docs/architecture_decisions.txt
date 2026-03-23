@@ -1,0 +1,18 @@
+Architecture Decisions
+
+The application was designed following a microservices architecture in order to
+separate responsibilities and allow each component to scale independently.
+
+REST was selected for the API Gateway because it is easy to consume, widely adopted,
+and provides automatic documentation through OpenAPI (Swagger).
+
+Kafka was chosen for location ingestion and processing to enable asynchronous
+communication, decouple producers from consumers, and handle high volumes of
+location events reliably.
+
+gRPC was selected for proximity calculations because it provides fast and efficient
+service-to-service communication using strongly typed contracts defined with Protocol
+Buffers.
+
+Each microservice is implemented independently and can be deployed, scaled, and
+maintained without affecting the others.

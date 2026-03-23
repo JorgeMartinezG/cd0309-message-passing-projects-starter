@@ -1,0 +1,13 @@
+gRPC Service Description
+
+The proximity-service uses gRPC to provide an internal service for proximity checks
+between two geographic coordinates.
+
+The service contract is defined using Protocol Buffers in a .proto file, which specifies
+the service interface and message formats.
+
+A gRPC server implements the ProximityService and exposes a CheckProximity method.
+A gRPC client consumes this service to demonstrate inter-service communication.
+
+This approach enables efficient, low-latency communication between internal services
+and enforces a strongly typed API contract.

@@ -1,0 +1,19 @@
+Architecture Design
+
+The system is composed of the following microservices:
+
+- API Gateway:
+  Exposes REST endpoints and serves as the entry point for clients.
+
+- Location Ingestion Service:
+  Receives location data and publishes events to Kafka.
+
+- Location Processing Service:
+  Consumes location events from Kafka and processes them asynchronously.
+
+- Proximity Service:
+  Provides gRPC-based proximity calculations between locations.
+
+Kafka acts as the messaging backbone between ingestion and processing services.
+REST is used for external communication, while gRPC is used for internal service
+communication.
