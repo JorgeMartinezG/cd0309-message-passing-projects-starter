@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-ingestion
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location-ingestion
+  template:
+    metadata:
+      labels:
+        app: location-ingestion
+    spec:
+      containers:
+        - name: location-ingestion
+          image: location-ingestion:latest
+          imagePullPolicy: Never
+          command: ["sh", "-c", "sleep infinity"]
+          ports:
+            - containerPort: 5000

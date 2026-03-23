@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: location-processing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: location-processing
+  template:
+    metadata:
+      labels:
+        app: location-processing
+    spec:
+      containers:
+        - name: location-processing
+          image: location-processing:latest
+          imagePullPolicy: Never
+          command: ["sh", "-c", "sleep infinity"]
+          ports:
+            - containerPort: 5000
