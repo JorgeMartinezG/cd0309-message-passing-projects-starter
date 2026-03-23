@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proximity;
+
+service ProximityService {
+  rpc CheckProximity (ProximityRequest) returns (ProximityResponse);
+}
+
+message ProximityRequest {
+  double lat1 = 1;
+  double lon1 = 2;
+  double lat2 = 3;
+  double lon2 = 4;
+}
+
+message ProximityResponse {
+  bool near = 1;
+}
