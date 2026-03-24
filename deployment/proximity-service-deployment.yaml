@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proximity-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proximity-service
+  template:
+    metadata:
+      labels:
+        app: proximity-service
+    spec:
+      containers:
+        - name: proximity-service
+          image: proximity-service:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 50051
